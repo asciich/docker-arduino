@@ -22,4 +22,4 @@ RUN echo "Europe/Zurich" > /etc/timezone && \
     ./install.sh && \
     ln -s /arduino/arduino /usr/bin/arduino && \
     rm -f /arduino.tar.xz && \
-    apt-get clean all
+    apt-get clean
