@@ -29,5 +29,4 @@ ENVIRONMENT="-e DISPLAY=${DISPLAY}"
 ENVIRONMENT="${ENVIRONMENT} -e XAUTHORITY=${XAUTHORITY}"
 CONTAINER=asciich/arduino
 
-#docker pulll ${CONTAINER}
 docker run --rm --net=host --privileged ${VOLUMES} ${ENVIRONMENT} -it ${CONTAINER} arduino
