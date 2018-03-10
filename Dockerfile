@@ -22,5 +22,6 @@ RUN wget https://downloads.arduino.cc/arduino-1.8.5-linux64.tar.xz \
     ln -s /arduino-1.8.5 /arduino && \
     cd /arduino/ && \
     ./install.sh && \
+    ln -s /arduino/arduino /usr/bin/arduino && \
     rm -f /arduino.tar.xz && \
     apt-get clean all
