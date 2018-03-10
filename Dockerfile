@@ -17,9 +17,8 @@ RUN echo "Europe/Zurich" > /etc/timezone && \
         x11-apps
 
 RUN wget https://downloads.arduino.cc/arduino-1.8.5-linux64.tar.xz \
-        -O /arduino.tar.xz
-
-RUN tar xfv /arduino.tar.xz && \
+        -O /arduino.tar.xz && \
+    tar xfv /arduino.tar.xz && \
     ln -s /arduino-1.8.5 /arduino && \
     cd /arduino/ && \
     ./install.sh && \
