@@ -50,6 +50,12 @@ cd /opt/asciich/arduino/ && git clone git@github.com:asciich/docker-arduino.git
 ln -s /opt/asciich/arduino/run_container.sh /usr/bin/arduino
 ```
 
+3. Now a project can be opened using:
+
+```
+arduino MY-ARDUINO-PROJECT.ino
+```
+
 ## Troubleshooting
 
 If uploading the firmware fails it can help to write manually to the serial device node:
