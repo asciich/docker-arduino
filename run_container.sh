@@ -22,6 +22,8 @@ if ! [ -d ${PROJECTS_DIR} ] ; then
         ARDUINO_PROJECT_MOUNTPOINT="/${ARDUINO_PROJECT_NAME}/"
         ARDUINO_PROJECT_FILE=${ARDUINO_PROJECT_NAME}/${ARDUINO_PROJECT_NAME}.ino
         PROJECTS_DIR=$(dirname ${PROJECTS_DIR})
+        PROJECTS_DIR=$(cd ${PROJECTS_DIR} && pwd)
+        cd ${MAIN_WD}
         # Create an additional mount point with the same name as the .ino file
         VOLUMES="${VOLUMES} -v ${PROJECTS_DIR}:${ARDUINO_PROJECT_MOUNTPOINT}"
     else
@@ -44,4 +46,5 @@ ENVIRONMENT="-e DISPLAY=${DISPLAY}"
 ENVIRONMENT="${ENVIRONMENT} -e XAUTHORITY=${XAUTHORITY}"
 CONTAINER=asciich/arduino
 
+echo docker run --rm --net=host --privileged ${VOLUMES} ${ENVIRONMENT} -it ${CONTAINER} arduino ${ARDUINO_PROJECT_FILE}
 docker run --rm --net=host --privileged ${VOLUMES} ${ENVIRONMENT} -it ${CONTAINER} arduino ${ARDUINO_PROJECT_FILE}

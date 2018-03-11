@@ -15,7 +15,7 @@ To open a single .ino file simply call the [run_container.sh](https://github.com
 with the path to the .ino file as argument
 
 ```
-git clone git@github.com:asciich/docker-arduino.git
+git clone https://github.com/asciich/docker-arduino.git
 cd docker-arduino
 ./run_container.sh MY-ARDUINO-PROJECT.ino
 ```
@@ -25,7 +25,7 @@ cd docker-arduino
 Instead of opening a single .ino project a complete directory including several arduino projects can be given as parameter.
 
 ```
-git clone git@github.com:asciich/docker-arduino.git
+git clone https://github.com/asciich/docker-arduino.git
 cd docker-arduino
 ./run_container.sh /MY/ARDUINO/PROJECTS
 ```
@@ -39,15 +39,15 @@ Use the open function in the IDE to open the needed project.
 
 ```
 # Normally this needs root access
-mkdir -p /opt/asciich/arduino/
-cd /opt/asciich/arduino/ && git clone git@github.com:asciich/docker-arduino.git
+mkdir -p /opt/asciich/
+cd /opt/asciich/ && git clone https://github.com/asciich/docker-arduino.git
 ```
 
 2. Link the run script into the execution path:
 
 ```
 # Normally this needs root access
-ln -s /opt/asciich/arduino/run_container.sh /usr/bin/arduino
+ln -s /opt/asciich/docker-arduino/run_container.sh /usr/bin/arduino
 ```
 
 3. Now a project can be opened using:
@@ -72,7 +72,7 @@ Then try uploading the project again.
 To build the asciich/arduino container localy:
 
 ```
-git clone git@github.com:asciich/docker-arduino.git
+git clone https://github.com/asciich/docker-arduino.git
 cd docker-arduino
 ./build_container.sh
 ```
