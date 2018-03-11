@@ -12,7 +12,9 @@ script which collects all mounts automatically.
 ### Open a single .ino project file
 
 To open a single .ino file simply call the [run_container.sh](https://github.com/asciich/docker-arduino/blob/master/run_container.sh)
-with the path to the .ino file as argument
+with the path to the .ino file as argument.
+There is no need to place the .ino file into a directory with the same name as the project.ino, this is automatically
+handeld by [run_container.sh](https://github.com/asciich/docker-arduino/blob/master/run_container.sh).
 
 ```
 git clone https://github.com/asciich/docker-arduino.git
@@ -47,7 +49,7 @@ cd /opt/asciich/ && git clone https://github.com/asciich/docker-arduino.git
 
 ```
 # Normally this needs root access
-ln -s /opt/asciich/docker-arduino/run_container.sh /usr/bin/arduino
+ln -sf /opt/asciich/docker-arduino/run_container.sh /usr/bin/arduino
 ```
 
 3. Now a project can be opened using:
