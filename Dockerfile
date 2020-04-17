@@ -13,11 +13,12 @@ RUN echo "Europe/Zurich" > /etc/timezone && \
         libxtst6 \
         vim \
         wget \
-        x11-apps && \
-    wget https://downloads.arduino.cc/arduino-1.8.5-linux64.tar.xz \
+        x11-apps
+
+RUN wget https://downloads.arduino.cc/arduino-1.8.12-linux64.tar.xz \
         -O /arduino.tar.xz && \
     tar xfv /arduino.tar.xz && \
-    ln -s /arduino-1.8.5 /arduino && \
+    ln -s /arduino-1.8.12 /arduino && \
     cd /arduino/ && \
     ./install.sh && \
     ln -s /arduino/arduino /usr/bin/arduino && \
